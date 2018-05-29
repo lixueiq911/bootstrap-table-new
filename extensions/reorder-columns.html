@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reorder Columns</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+    <link rel="stylesheet" href="https://rawgit.com/akottr/dragtable/master/dragtable.css">
+   
+    <script src="../assets/bootstrap-table/src/extensions/reorder-columns/bootstrap-table-reorder-columns.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://rawgit.com/akottr/dragtable/master/jquery.dragtable.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../ga.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Reorder Columns</h1>
+        <table id="table"
+               data-toggle="table"
+               data-show-columns="true" 
+			   data-search="true" 
+			   data-show-toggle="true"
+               data-pagination="true"
+               data-url="../json/data1.json"
+			   data-reorderable-columns="true">
+            <thead>
+            <tr>
+                <th data-field="id" data-sortable="true">ID</th>
+                <th data-field="name" data-sortable="true">Item Name</th>
+                <th data-field="price" data-sortable="true">Item Price</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

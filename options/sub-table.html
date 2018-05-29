@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sub Table</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sub Table</h1>
+        <p>Use <code>onExpandRow</code> event to handle your detail view.</p>
+        <table id="table"
+               data-detail-view="true">
+            <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        buildTable($table, 8, 1);
+    });
+
+    function expandTable($detail, cells) {
+        buildTable($detail.html('<table></table>').find('table'), cells, 1);
+    }
+
+    function buildTable($el, cells, rows) {
+        var i, j, row,
+                columns = [],
+                data = [];
+
+        for (i = 0; i < cells; i++) {
+            columns.push({
+                field: 'field' + i,
+                title: 'Cell' + i,
+                sortable: true
+            });
+        }
+        for (i = 0; i < rows; i++) {
+            row = {};
+            for (j = 0; j < cells; j++) {
+                row['field' + j] = 'Row-' + i + '-' + j;
+            }
+            data.push(row);
+        }
+        $el.bootstrapTable({
+            columns: columns,
+            data: data,
+            detailView: cells > 1,
+            onExpandRow: function (index, row, $detail) {
+                expandTable($detail, cells - 1);
+            }
+        });
+    }
+</script>
+</body>
+</html>

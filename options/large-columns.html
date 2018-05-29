@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>large-columns</title>
+    <meta charset="utf-8">
+   <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Large Columns</h1>
+        <p>Bootstrap table support large columns, it will auto to show the horizontal scroll bar.</p>
+        <table id="table" data-height="400" data-show-columns="true"></table>
+    </div>
+<script>
+    var $table = $('#table');
+
+    $(function () {
+        buildTable($table, 50, 50);
+    });
+
+    function buildTable($el, cells, rows) {
+        var i, j, row,
+                columns = [],
+                data = [];
+
+        for (i = 0; i < cells; i++) {
+            columns.push({
+                field: 'field' + i,
+                title: 'Cell' + i,
+                sortable: true
+            });
+        }
+        for (i = 0; i < rows; i++) {
+            row = {};
+            for (j = 0; j < cells; j++) {
+                row['field' + j] = 'Row-' + i + '-' + j;
+            }
+            data.push(row);
+        }
+        $el.bootstrapTable('destroy').bootstrapTable({
+            columns: columns,
+            data: data
+        });
+    }
+</script>
+</body>
+</html>

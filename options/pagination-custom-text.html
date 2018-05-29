@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagination Custom Text</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+<div class="container">
+    <h1>Pagination Custom Text</h1>
+    <p>Use <code>paginationFirstText</code>, <code>paginationPreText</code>, <code>paginationNextText</code>, <code>paginationLastText</code> options to set the pagination text.</p>
+    <table id="table"
+           data-toggle="table"
+           data-height="460"
+           data-url="../json/data1.json"
+           data-pagination="true"
+           data-page-size="5"
+           data-page-list="[5,8,10]"
+           data-pagination-first-text="First"
+           data-pagination-pre-text="Previous"
+           data-pagination-next-text="Next"
+           data-pagination-last-text="Last">
+        <thead>
+        <tr>
+            <th data-field="id">ID</th>
+            <th data-field="name">Item Name</th>
+            <th data-field="price">Item Price</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+</html>

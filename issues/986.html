@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editable select box</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+    <link rel="stylesheet" href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+  
+    <script src="../assets/bootstrap-table/src/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
+ 
+</head>
+<body>
+    <div class="container">
+        <h1>Editable select box(<a href="https://github.com/wenzhixin/bootstrap-table/issues/986" target="_blank">#986</a>).</h1>
+        <table id="table"></table>
+    </div>
+<script>
+    var data = [{
+        "name": "active"
+    }, {
+        "name": "blocked"
+    }, {
+        "name": "deleted"
+    }];
+
+    var $table = $('#table');
+
+    $(function () {
+        $table.bootstrapTable({
+            idField: 'name',
+            columns: [{
+                field: 'state',
+                title: '',
+                checkbox: true
+            }, {
+                field: 'name',
+                title: 'names',
+                sortable: true,
+                editable: {
+                    type: 'select',
+                    source: [
+                        {value: 'active', text: 'Active'},
+                        {value: 'blocked', text: 'Blocked'},
+                        {value: 'deleted', text: 'Deleted'}
+                    ]
+                }
+            }],
+            data: data
+        });
+    });
+</script>
+</body>
+</html>

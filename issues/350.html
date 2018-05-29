@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Support for data-field with dot notation</title>
+    <meta charset="utf-8">
+   <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Support for data-field with dot notation(<a href="https://github.com/wenzhixin/bootstrap-table/pull/350">#350</a>).</h1>
+        <table id="table"
+               data-toggle="table"
+               data-search="true"
+               data-show-refresh="true"
+               data-show-toggle="true"
+               data-show-columns="true"
+               data-flat="true"
+               data-url="../json/350.json">
+            <thead>
+            <tr>
+                <th data-field="github.name" data-sortable="true">Name</th>
+                <th data-field="github.count.stargazers" data-sortable="true">Stargazers</th>
+                <th data-field="github.count.forks" data-sortable="true">Forks</th>
+                <th data-field="github.description" data-sortable="true">Description</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+<script>
+    var $table = $('#table');
+    $(function () {
+        $table.on('sort.bs.table', function (event, name, order) {
+            console.log(name, order);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>custom-toolbar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+    <style>
+        .w70 {width: 70px !important;}
+    </style>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Toolbar</h1>
+        <p>Use <code>toolbar</code> option to define the custom toolbars.</p>
+        <div id="toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group">
+                    <span>Offset: </span>
+                    <input name="offset" class="form-control w70" type="number" value="0">
+                </div>
+                <div class="form-group">
+                    <span>Limit: </span>
+                    <input name="limit" class="form-control w70" type="number" value="5">
+                </div>
+                <div class="form-group">
+                    <input name="search" class="form-control" type="text" placeholder="Search">
+                </div>
+                <button id="ok" type="submit" class="btn btn-default">OK</button>
+            </div>
+        </div>
+        <table id="table"
+               data-toggle="table"
+               data-height="460"
+               data-toolbar="#toolbar"
+               data-show-refresh="true"
+               data-show-toggle="true"
+               data-show-columns="true"
+               data-query-params="queryParams"
+               data-response-handler="responseHandler"
+               data-url="/examples/bootstrap_table/data">
+            <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+<script>
+    var $table = $('#table'),
+        $ok = $('#ok');
+
+    $(function () {
+        $ok.click(function () {
+            $table.bootstrapTable('refresh');
+        });
+    });
+
+    function queryParams() {
+        var params = {};
+        $('#toolbar').find('input[name]').each(function () {
+            params[$(this).attr('name')] = $(this).val();
+        });
+        return params;
+    }
+
+    function responseHandler(res) {
+        return res.rows;
+    }
+</script>
+</body>
+</html>

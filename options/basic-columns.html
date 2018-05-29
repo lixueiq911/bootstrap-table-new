@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>basic-columns</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Basic Columns</h1>
+        <p>Use <code>showColumns</code>, <code>minimumCountColumns</code> options, and <code>visible</code>, <code>switchable</code> column options to show the columns menu list use to switch.</p>
+        <table id="table"
+               data-toggle="table"
+               data-height="460"
+               data-url="../json/data5.json"
+               data-show-columns="true"
+               data-id-field="id">
+            <thead>
+            <tr>
+                <th data-field="state" data-radio="true"></th>
+                <th data-field="name" data-switchable="false">Name</th>
+                <th data-field="price">Price</th>
+                <th data-field="column1">Columns1</th>
+                <th data-field="column2" data-visible="false">Columns2</th>
+                <th data-field="column3" data-switchable="false">Columns3</th>
+                <th data-field="column4" data-visible="false">Columns4</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Use responseHandler option to handle your response data</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Use responseHandler option to handle your response data(<a href="https://github.com/wenzhixin/bootstrap-table/issues/353" target="_blank">#353</a>).</h1>
+        <table id="table"></table>
+    </div>
+<script>
+    $(function () {
+        $('#table').bootstrapTable({
+            url: '../json/353.json',
+            columns: [{
+                field: 'date',
+                title: 'Date Stamp',
+                sortable: true
+            }, {
+                field: 'm_type',
+                title: 'Type',
+                sortable: true
+            }, {
+                field: 'msdn',
+                title: 'MSDN',
+                sortable: true
+            }, {
+                field: 'file_name',
+                title: 'File Name',
+                sortable: true
+            }, {
+                field: 'message',
+                title: 'Message',
+                sortable: true
+            }],
+            responseHandler: function (res) {
+                return res.messages;
+            }
+        });
+    });
+</script>
+</body>
+</html>

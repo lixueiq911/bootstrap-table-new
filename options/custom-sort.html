@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>custom-sort</title>
+    <meta charset="utf-8">
+   <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Sort</h1>
+        <p>Use <code>sorter</code> column option to define the custom sort of bootstrap table.</p>
+        <table id="table"
+               data-toggle="table"
+               data-height="460"
+               data-url="../json/data1.json"
+               data-sort-name="price"
+               data-sort-order="desc">
+            <thead>
+            <tr>
+                <th data-field="id" data-sortable="true">Item ID</th>
+                <th data-field="name" data-sortable="true">Item Name</th>
+                <th data-field="price" data-sortable="true" data-sorter="priceSorter">Item Price</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+<script>
+    function priceSorter(a, b) {
+        a = +a.substring(1); // remove $
+        b = +b.substring(1);
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+    }
+</script>
+</body>
+</html>

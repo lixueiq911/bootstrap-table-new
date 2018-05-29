@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Multiple Fields in Column</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	<link rel="stylesheet" href="../css/bootstrap-table.css">
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/bootstrap-table.js"></script>
+	
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="js/bootstrap-table-zh-CN.min.js"></script> -->
+	<script src="../js/bootstrap-table-zh-CN.min.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/ga.js"></script>
+	<script src="../js/analytics.js"></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256793290&amp;web_id=1256793290" async="" defer=""></script>
+</head>
+<body>
+    <div class="container">
+        <h1>The Multiple Fields in Column(<a href="https://github.com/wenzhixin/bootstrap-table/issues/177" target="_blank">#177</a>.)</h1>
+        <table id="table"></table>
+    </div>
+<script>
+    var data = [
+        {
+            "firstName": "zhixin",
+            "lastName": "wen",
+            "field1": "field1",
+            "field2": "field2",
+            "field3": "field3"
+        }
+    ];
+
+    $(function () {
+        $('#table').bootstrapTable({
+            data: data,
+            columns: [{
+                field: 'fullName',
+                title: 'Full Name',
+                formatter: function (value, row) {
+                    return [row.firstName, row.lastName].join(' ');
+                }
+            }, {
+                field: 'field',
+                title: 'Field',
+                formatter: function (value, row) {
+                    return [row.field1, row.field2, row.field3].join('+');
+                }
+            }]
+        });
+    });
+</script>
+</body>
+</html>
